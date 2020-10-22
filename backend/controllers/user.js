@@ -9,6 +9,7 @@ const models = require('../models'); //importation du model User
 //INSCRIPTION USER
 exports.signUpUser = (req, res, next) => {
     console.log('coucou')
+    console.log(req.body)
     const email = req.body.email;
         const username = req.body.username;
         const password = req.body.password;

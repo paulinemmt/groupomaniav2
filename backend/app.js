@@ -3,15 +3,29 @@
 const express = require('express'); //ajout du framework express au projet
 const helmet = require("helmet"); //sécurisation de l'app en ajoutant divers en-tête http
 const bodyParser = require('body-parser'); //ajout de body-parser au projet : permet extraction d'objet JSON
-// const Sequelize = require('sequelize');
+const Sequelize = require('sequelize');
 
 const app = express();
 const path = require('path');
 
 //routes files importation
-// const postRoutes = require('./routes/post');
+const postRoutes = require('./routes/post');
 const userRoutes = require('./routes/user');
 
+//Data base connexion
+const sequelize = new Sequelize('groupomania_social_media', 'root', '', {
+    dialect: 'mysql',
+    host: 'localhost'
+ })  
+    try {
+    sequelize.authenticate();
+    console.log('Connection with the data base has been established successfully.');
+  } catch (error) {
+    console.error('Unable to connect to the database:', error);
+  }
+
+  const exportsd = module.exports = {};
+  exports.sequelize = sequelize;
 
 //correction des erreurs de CORS
 app.use((req, res, next) => {
@@ -30,7 +44,7 @@ app.use(bodyParser.json());
 //routes
 app.use('/images', express.static(path.join(__dirname, 'images'))); //express doit gérer la ressource image de manière statique
 app.use('/api/user', userRoutes);
-// app.use('/api/post', postRoutes);
+app.use('/api/post', postRoutes);
 
 
 module.exports = app;
