@@ -17,7 +17,7 @@
         <label for="photo">Photo</label>
         <input type="text" class="form-control" id="photo">
     </div>
-    <button type="submit" class="btn btn-submit-color">Submit</button>
+    <button type="submit" class="btn btn-submit-color">Inscription</button>
     </form>
 </div>
 </template>

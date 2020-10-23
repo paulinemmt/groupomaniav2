@@ -9,7 +9,7 @@
         <label for="password">Password</label>
         <input type="password" class="form-control" id="password" required>
     </div>
-    <button type="submit" class="btn btn-submit-color">Submit</button>
+    <button type="submit" class="btn btn-submit-color">Connexion</button>
     </form>
 </div>
 </template>

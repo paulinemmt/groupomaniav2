@@ -1,16 +1,19 @@
 <template>
 <div class="container">
-    <div class="row d-flex flex-column justify-content-center bg-header">
-        <h1 class="main-title text-uppercase">Post Sharing</h1>
-        <a href='#'><img class="logo-title" src='../assets/icon-above-font.png' alt="Icone de Groupomania"></a>
-    </div>
+    <body>
+        <Post/>
+    </body>
 </div>
 </template>
 
 <script>
+import Post from '../components/Post'
 
 export default {
-  name: 'Header',
+  name: 'View',
+  components: {
+  Post
+}
 }
 </script>
 

@@ -3,11 +3,11 @@
     <form>
     <div class="form-group">
         <label for="username">Username</label>
-        <input type="text" class="form-control" id="username" required>
+        <input type="text" class="form-control" id="username">
     </div>
     <div class="form-group">
         <label for="photo">Photo</label>
-        <input type="text" class="form-control" id="photo" required>
+        <input type="text" class="form-control" id="photo">
     </div>
     <button type="submit" class="btn btn-submit-color">Modify</button>
     </form>

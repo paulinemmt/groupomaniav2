@@ -1,16 +1,19 @@
 <template>
 <div class="container">
-    <div class="row d-flex flex-column justify-content-center bg-header">
-        <h1 class="main-title text-uppercase">Post Sharing</h1>
-        <a href='#'><img class="logo-title" src='../assets/icon-above-font.png' alt="Icone de Groupomania"></a>
-    </div>
+    <body>
+        <ConnexionForm/>
+    </body>
 </div>
 </template>
 
 <script>
+import ConnexionForm from '../components/ConnexionForm'
 
 export default {
-  name: 'Header',
+  name: 'HomeSignup',
+  components: {
+  ConnexionForm
+}
 }
 </script>
 
@@ -30,3 +33,4 @@ export default {
 //     background-image: url("../../../assets/images/bg-header.jpg");
 // }
 </style>
+
