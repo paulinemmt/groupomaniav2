@@ -21,7 +21,7 @@ const routes = [
     component: HomeLogin
   },
   {
-    path: '/view',
+    path: '/allpost',
     name: 'View',
     component: UserPostView
   },

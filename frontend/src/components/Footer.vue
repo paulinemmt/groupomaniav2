@@ -1,17 +1,21 @@
+
+<template>
+  <div class="container py-3 footer-bg">
+    <div class="row d-flex justify-content-center">
+        <a class="mx-2" href='#'>Mentions légales</a>
+        <a class="mx-2" href='mailto:groupomania@contact.com'>Contact</a>
+    </div>
+    <div class="row d-flex justify-content-center mt-2 text-company">
+        <p>Site créé par CONNECT-E</p>
+    </div>
+  </div>
+</template>
+
 <script>
 export default {
   name: 'Footer',
 }
 </script>
-
-<template>
-<div class="container py-3 footer-bg">
-        <a class="mx-2" href='#'>Mentions légales</a>
-        <a class="mx-2" href='#'>Contact</a>
-</div>
-</template>
-
-
 
 
 <style scoped lang="scss">
@@ -24,5 +28,8 @@ font-weight: bold;
 }
 .footer-bg{
   background-color: #FFD7D7;
+}
+.text-company{
+  font-size: 0.8rem;
 }
 </style>
