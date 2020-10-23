@@ -24,7 +24,7 @@ const sequelize = new Sequelize('groupomania_social_media', 'root', '', {
     console.error('Unable to connect to the database:', error);
   }
 
-  const exportsd = module.exports = {};
+  const exportss = module.exports = {};
   exports.sequelize = sequelize;
 
 //correction des erreurs de CORS
