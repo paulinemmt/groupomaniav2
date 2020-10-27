@@ -10,7 +10,7 @@
 import Post from '../components/Post'
 
 export default {
-  name: 'View',
+  name: 'AllPost',
   components: {
   Post
 }

@@ -10,7 +10,7 @@
 import CreatePostForm from '../components/CreatePostForm'
 
 export default {
-  name: 'HomeSignup',
+  name: 'UserCreate',
   components: {
   CreatePostForm
 }

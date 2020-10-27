@@ -26,27 +26,30 @@ export default {
 methods: {
 loginUser() {
     console.log('coucou')
-    let dataForm = {email : this.email, password : this.password}
+    let dataForm = JSON.stringify({email : this.email, password : this.password})
     console.log(dataForm)
-//     async function postForm(dataToSend) {
-//     try {
-//         let response = await fetch("http://localhost:3000/api/user/login", {
-//             method: 'POST',
-//             headers: {
-//                 'content-type': 'application/json'
-//             },
-//             body: dataToSend,
-//         });
-//         if (response.ok) {
-//             let responseId = await response.json();
-//             window.location.href = "/create";
-//         } else {
-//             console.error('Retour du serveur : ', response.status);
-//         }
-//     } catch (e) {
-//         console.log(e);
-//     }
-// }
+    async function postForm(dataToSend) {
+    try {
+        let response = await fetch("http://localhost:3000/api/user/login", {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: dataToSend,
+        });
+        if (response.ok) {
+            let responseId = await response.json();
+            console.log(responseId)
+            // localStorage.setItem("Id", responseId.userId);
+            // window.location.href = "/create";
+        } else {
+            console.error('Retour du serveur : ', response.status);
+        }
+    } catch (e) {
+        console.log(e);
+    }
+}
+postForm(dataForm);
 }
 }
 }

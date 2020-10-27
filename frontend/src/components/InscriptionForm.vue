@@ -34,28 +34,32 @@ export default {
     },
     methods: {
          signUpUser() {
-             let dataForm = {email: this.email, username: this.username, password: this.password, photo: this.photo}
-//             console.log("signup")
+             let dataForm = JSON.stringify({email: this.email, username: this.username, password: this.password, photo: this.photo})
+             console.log("signup")
              console.log(dataForm)
-//                 async function signUp(dataForm) {
-//     try {
-//         let response = await fetch("http://localhost:3000/api/user/login", {
-//             method: 'POST',
-//             headers: {
-//                 'content-type': 'application/json'
-//             },
-//             body: dataForm,
-//         });
-//         if (response.ok) {
-//             let responseId = await response.json();
-//             window.location.href = "/create";
-//         } else {
-//             console.error('Retour du serveur : ', response.status);
-//         }
-//     } catch (e) {
-//         console.log(e);
-//     }
-// }
+                async function signUp(dataForm) {
+    try {
+        let response = await fetch("http://localhost:3000/api/user/signup", {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: dataForm,
+        });
+        if (response.ok) {
+            let responseId = await response.json();
+            console.log(responseId);
+            localStorage.setItem("Id", responseId.userId);
+            // window.location.href = "/create";
+        
+        } else {
+            console.error('Retour du serveur : ', response.status);
+        }
+    } catch (e) {
+        console.log(e);
+    }
+}
+signUp(dataForm)
          }
     }
 }

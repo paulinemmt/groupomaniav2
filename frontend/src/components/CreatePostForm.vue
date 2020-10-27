@@ -11,7 +11,7 @@
     </div>
     <div class="form-group">
         <label for="url">Url</label>
-        <input type="url" class="form-control" id="url" v-model="url">
+        <input type="url" class="form-control" id="url" >
     </div>
     <button type="submit" class="btn btn-submit-color" v-on:click="createPost">Post</button>
     </form>
@@ -23,36 +23,43 @@ export default {
     name: 'CreatePostForm',
     data () {
         return {
+            //RECUPERE LES ID
+            id_users: 5,
             title: '',
             content: '',
-            url: ''
+            //CHOISIR QUEL ID
+            UserId: 5
         }
     },
     methods:{
     createPost() {
         console.log('create');
-        let dataForm = {title: this.title, content: this.content, url: this.url};
+        let dataForm = {id_users: this.id_users, title: this.title, content: this.content, UserId: this.UserId};
+        let jsonDataForm = JSON.stringify(dataForm)
         console.log(dataForm);
-        //     async function postForm(dataToSend) {
-//     try {
-//         let response = await fetch("http://localhost:3000/api/post", {
-//             method: 'POST',
-//             headers: {
-//                 'content-type': 'application/json'
-//             },
-//             body: dataToSend,
-//         });
-//         if (response.ok) {
-//             let responseId = await response.json();
-//             window.location.href = "/signup";
-// Message post créé
-//         } else {
-//             console.error('Retour du serveur : ', response.status);
-//         }
-//     } catch (e) {
-//         console.log(e);
-//     }
-// }
+        console.log(jsonDataForm)
+            async function postForm(dataToSend) {
+    try {
+        let response = await fetch("http://localhost:3000/api/post", {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: dataToSend,
+        });
+        if (response.ok) {
+            let responseId = await response.json();
+            window.location.href = "/signup";
+            console.log(responseId);
+//Message post créé
+        } else {
+            console.error('Retour du serveur : ', response.status);
+        }
+    } catch (e) {
+        console.log(e);
+    }
+}
+postForm(jsonDataForm);
     }
 }}
 </script>

@@ -16,62 +16,41 @@ exports.getAllPost = (req, res, next) => {
   .catch(error => res.status(400).json({ error }));
 }
 
-// //CREATE A POST
-//   exports.addPost = (req, res, next) => {
-//     console.log('coucou')
-//     console.log(req.body)
+//CREATE A POST
+  exports.addPost = (req, res, next) => {
+    console.log('coucou')
+    console.log(req.body)
 
-//     //Params
-//     const title = req.body.title;
-//     const content = req.body.content;
+    //Params
+    const id_users = req.body.id_users
+    const title = req.body.title;
+    const content = req.body.content;
+    const UserId = req.body.UserId;
 
-//     //Verify parameters
-//     if (title == null || content == null) {
-//       return res.status(400).json({'error': 'missing parameters'})
-//     }
+    //Verify parameters
+    if (title == null || content == null) {
+      return res.status(400).json({'error': 'missing parameters'})
+    }
 
-//     //Create the post
-//     const Post = models.Post.create({
-//         title: title,
-//         content: content,
-//     })
-//       .then (function(newPost){
-//         return res.status(201).json({
-//           'postId': newPost.id
-//         })
-//     })
-//     .catch(function(err){
-//       return res.status(500).json({'error': 'cannot add post'})
-//     })
-//   };
+    //Create the post
+    const newPost = models.Post.create({
+      //userId ????
+      id_users: id_users,
+        title: title,
+        content: content,
+        UserId: UserId
+    })
+      .then (function(newPost){
+        return res.status(201).json({
+          'postId': newPost.id
+        })
+    })
+    .catch(function(err){
+      return res.status(500).json({'error': 'cannot add post'})
+    })
+  };
   
-  //     .then(function(userFound){
-  //         if (!userFound) {
-  //             bcrypt.hash(password, 5, function(err, bcryptedPassword){
-  //                 const newUser = models.User.create({
-  //                     email: email,
-  //                     username: username,
-  //                     password: bcryptedPassword,
-  //                     photo: photo,
-  //                     isAdmin: 0
-  //                 })
-  //                 .then(function(newUser){
-  //                     return res.status(201).json({
-  //                         'userId': newUser.id
-  //                     })
-  //                 })
-  //                 .catch(function(err){
-  //                     return res.status(500).json({'error': 'cannot add user'});
-  //                 })
-  //             })
-  //         }else{
-  //             return res.status(409).json({ 'error' : 'user already exist'});
-  //         }
-  //     })
-  //     .catch(function(err){
-  //         return res.status(500).json({'error': 'unable to verify user'});
-  //     })
-  // }
+      
 
 // exports.addPost = (req, res, next) => {
 //     // Getting auth header

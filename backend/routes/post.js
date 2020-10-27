@@ -9,8 +9,8 @@ const auth = require('../middleware/auth'); //importation authentification
 const postCtrl = require('../controllers/post'); //importation des controllers article
 
 //routes
-postRouter.get('/',auth, postCtrl.getAllPost);
-// postRouter.post('/', postCtrl.addPost);
+postRouter.get('/', postCtrl.getAllPost);
+postRouter.post('/', postCtrl.addPost);
 // postRouter.put('/:id',auth, postCtrl.modifyPost);
 // postRouter.delete('/:id', auth, postCtrl.deletePost);
 

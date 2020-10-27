@@ -8,11 +8,11 @@ const userCtrl = require('../controllers/user');//importation des controllers us
 const auth = require('../middleware/auth'); //importation authentification
 // const multer = require('../middleware/multer-config'); //importation multer pour la gestion des images
 
-//routes
+//routes RAJOUTER LES AUTH
 userRouter.post('/signup',  userCtrl.signUpUser);
 userRouter.post('/login', userCtrl.loginUser);
-userRouter.put('/:id',auth, userCtrl.modifyUser);
-userRouter.delete('/:id', auth, userCtrl.deleteUser);
+userRouter.put('/:id', userCtrl.updateUser);
+userRouter.delete('/:id', userCtrl.deleteUser);
 
 module.exports = userRouter;
 
