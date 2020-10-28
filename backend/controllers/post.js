@@ -9,9 +9,8 @@ const bodyParser = require('body-parser'); //importation module body-parser (per
 
 //GET ALL POSTS
 exports.getAllPost = (req, res, next) => {
-  console.log('coucou');
   models.Post.findAll({
-    order: [['createdAt', 'ASC']]
+    order: [['createdAt', 'DESC']]
   }).then(posts => res.status(200).json(posts))
     .catch(error => res.status(400).json({ error }));
 }

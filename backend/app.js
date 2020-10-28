@@ -12,7 +12,7 @@ const path = require('path');
 const postRoutes = require('./routes/post');
 const userRoutes = require('./routes/user');
 
-//Data base connexion
+//Data base connexion A SUPPRIMER
 const sequelize = new Sequelize('groupomania_social_media', 'root', '', {
     dialect: 'mysql',
     host: 'localhost'

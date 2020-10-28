@@ -40,7 +40,9 @@ export default {
                             localStorage.setItem("Id", responseId.userId);
                             localStorage.setItem("token", responseId.token);
                             localStorage.setItem("isAdmin", responseId.isAdmin);
-                            window.location.href = "http://localhost:8080/signup#/allpost";
+                            console.log(location.origin);
+                            location.replace(location.origin + "/signup#/allpost");
+                            // window.location.href = "http://localhost:8080/signup#/allpost";
                         } else {
                             console.error('Retour du serveur : ', response.status);
                         }

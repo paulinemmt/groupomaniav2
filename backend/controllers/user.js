@@ -115,3 +115,10 @@ exports.updateUser = (req, res, next) => {
         .then(() => res.status(200).json({ message: 'User updated !' }))
         .catch(error => res.status(400).json({ error }));
 }
+
+//GET USER 
+exports.getUser = (req, res, next) => {
+    models.User.findAll()
+    .then(users => res.status(200).json(users))
+        .catch(error => res.status(400).json({ error }));
+}
