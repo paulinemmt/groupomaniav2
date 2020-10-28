@@ -1,8 +1,7 @@
 <template>
 <div class="container">
-    <body>
-        <ConnexionForm/>
-    </body>
+    <h2 class="text-center border rounded subtitle py-1 mx-5">Login</h2>
+    <ConnexionForm/>
 </div>
 </template>
 
@@ -13,7 +12,7 @@ export default {
   name: 'HomeSignup',
   components: {
   ConnexionForm
-}
+    }
 }
 </script>
 
@@ -29,8 +28,10 @@ export default {
 .logo-navbar{
     width: 2rem;
 }
-// .bg-header{
-//     background-image: url("../../../assets/images/bg-header.jpg");
-// }
+.subtitle{
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #FD2D01;
+}
 </style>
 

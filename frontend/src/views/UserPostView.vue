@@ -1,8 +1,7 @@
 <template>
 <div class="container">
-    <body>
-        <Post/>
-    </body>
+    <h2 class="text-center border rounded subtitle py-1 mx-5">Wall Post</h2>
+    <Post/>
 </div>
 </template>
 
@@ -10,10 +9,10 @@
 import Post from '../components/Post'
 
 export default {
-  name: 'AllPost',
-  components: {
-  Post
-}
+    name: 'AllPost',
+    components: {
+    Post
+    }
 }
 </script>
 
@@ -29,7 +28,9 @@ export default {
 .logo-navbar{
     width: 2rem;
 }
-// .bg-header{
-//     background-image: url("../../../assets/images/bg-header.jpg");
-// }
+.subtitle{
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #FD2D01;
+}
 </style>

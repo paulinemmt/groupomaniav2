@@ -1,8 +1,7 @@
 <template>
 <div class="container">
-    <body>
-        <CreatePostForm/>
-    </body>
+    <h2 class="text-center border rounded subtitle py-1 mx-5">Create a post</h2>
+    <CreatePostForm/>
 </div>
 </template>
 
@@ -10,10 +9,10 @@
 import CreatePostForm from '../components/CreatePostForm'
 
 export default {
-  name: 'UserCreate',
-  components: {
-  CreatePostForm
-}
+    name: 'UserCreate',
+    components: {
+    CreatePostForm
+    }
 }
 </script>
 
@@ -29,8 +28,10 @@ export default {
 .logo-navbar{
     width: 2rem;
 }
-// .bg-header{
-//     background-image: url("../../../assets/images/bg-header.jpg");
-// }
+.subtitle{
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #FD2D01;
+}
 </style>
 

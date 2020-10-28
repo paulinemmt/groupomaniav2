@@ -1,8 +1,7 @@
 <template>
 <div class="container">
-    <body>
-        <ProfilForm/>
-    </body>
+    <h2 class="text-center border rounded subtitle py-1 mx-5">User profil</h2>
+    <ProfilForm/>
 </div>
 </template>
 
@@ -10,10 +9,10 @@
 import ProfilForm from '../components/ProfilForm'
 
 export default {
-  name: 'Profil',
-  components: {
-  ProfilForm
-}
+    name: 'Profil',
+    components: {
+    ProfilForm
+    }
 }
 </script>
 
@@ -29,7 +28,9 @@ export default {
 .logo-navbar{
     width: 2rem;
 }
-// .bg-header{
-//     background-image: url("../../../assets/images/bg-header.jpg");
-// }
+.subtitle{
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #FD2D01;
+}
 </style>

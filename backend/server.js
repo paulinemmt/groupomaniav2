@@ -1,9 +1,10 @@
-//////////////////////SERVEUR///////////////////////////////////
+//////////////////////SERVER///////////////////////////////////
 
-const http = require('http'); //importation package http de Node
-const app = require('./app'); //importation du fichier app.js
+//////IMPORTS
+const http = require('http'); 
+const app = require('./app'); 
 
-//renvoit un port valide sous forme de chaine ou de numéro
+//Valid port : string or number
 const normalizePort = val => {
   const port = parseInt(val, 10);
 
@@ -19,7 +20,7 @@ const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 
-// Cherche erreur et les gère, les garde dans server
+// Error check, save in server
 const errorHandler = error => {
   if (error.syscall !== 'listen') {
     throw error;
@@ -40,9 +41,9 @@ const errorHandler = error => {
   }
 };
 
-const server = http.createServer(app); // création du serveur à partir du fichier app.js
+const server = http.createServer(app); // Server creation
 
-//configuration du serveur
+//Server configuration 
 server.on('error', errorHandler);
 server.on('listening', () => {
   const address = server.address();
@@ -50,33 +51,5 @@ server.on('listening', () => {
   console.log('Listening on ' + bind);
 });
 
-//mise en marche du serveur
+//Launch server
 server.listen(port);
-
-
-
-// //imports
-// const express = require('express');
-// const bodyParser = require('body-parser');
-// const apiRouter = require('./app').router;
-
-// //Instanciate server
-// const server = express();
-
-
-// //Body Parser configuration
-// server.use(bodyParser.urlencoded({extended: true }));
-// server.use(bodyParser.json());
-
-// //Configure routes
-// server.get('/', function (req, res){
-//     res.setHeader('Content-Type','text/html');
-//     res.status(200).send('<h1>Bonjour sur mon serveur</h1>');
-// });
-
-// server.use('/api/',apiRouter )
-
-// //Launch server
-// server.listen(8080, function() {
-//     console.log('Server en écoute : ')
-// })

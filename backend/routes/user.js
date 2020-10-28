@@ -1,14 +1,13 @@
 //////////////////////////ROUTES USER////////////////////////////////
 
 const express = require('express');
-const userRouter = express.Router(); //appel méthode router de express
+const userRouter = express.Router(); //Router method
 
-const userCtrl = require('../controllers/user');//importation des controllers user
+const userCtrl = require('../controllers/user');//User controllers
 
-const auth = require('../middleware/auth'); //importation authentification
-// const multer = require('../middleware/multer-config'); //importation multer pour la gestion des images
+const auth = require('../middleware/auth'); //Authentification
 
-//routes RAJOUTER LES AUTH
+//Routes
 userRouter.post('/signup',  userCtrl.signUpUser);
 userRouter.post('/login', userCtrl.loginUser);
 userRouter.put('/:id',auth, userCtrl.updateUser);
@@ -16,4 +15,4 @@ userRouter.delete('/:id',auth, userCtrl.deleteUser);
 
 module.exports = userRouter;
 
-
+ 

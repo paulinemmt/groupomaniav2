@@ -1,24 +1,25 @@
-/////////////////AUTHENTIFICATION/////////////////////////////
+//////////////////////AUTHENTIFICATION/////////////////////////////
 
-//création du middleware de protection des routes
-//et vérification de l'autentification du user avant l'autorisation de l'envoie des requêtes
+//Creation of the missleware to protect routes
+// + check authentification user with the token
 
+////////IMPORTS
 const jwt = require('jsonwebtoken'); //token
 
 module.exports = (req, res, next) => {
-  //try catch : il peut y avoir des erreurs
+  //Try catch : it can be error
   try {
-    //extraction du token du header Authorization
+    //Extraction token from athorization header
     const token = req.headers.authorization.split(' ')[1];
     console.log(req.headers.authorization);
-    //verify : décode le token
+    //verify token
     const decodedToken = jwt.verify(token, 'RANDOM_TOKEN_SECRET');
-    //comparaison avec l'Id user
+    //Compare with idUser
     const userId = decodedToken.userId;
-    //si invalide alors erreur générée
+    //If not valid, error
     if (req.body.userId && req.body.userId !== userId) {
       throw 'Invalid user ID';
-      //si valide alors exécution de la requête
+      //If valid, request
     } else {
       next();
     }

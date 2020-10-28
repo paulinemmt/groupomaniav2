@@ -1,14 +1,14 @@
 <template>
-    <div class="container">
-        <article class="border rounded" v-for="(post, id) in posts" v-bind:key="id">
-            <div class="d-flex flex-row justify-content-between">
-                <p class="p-2">{{post.datePublication}}</p>
-            </div>
-            <h2 class="title-color">{{post.title}}</h2>
-            <p class="text-justify m-2">{{post.content}}</p>
-            <button class="btn btn-submit-color my-2" v-if="isAdmin = true" v-on:click="deletePost" >Delete</button>
-        </article>
-    </div>
+<div class="container">
+    <article class="border rounded my-2 p-2" v-for="(post, id) in posts" v-bind:key="id">
+        <div class="d-flex flex-row justify-content-between">
+            <p class="p-2">{{post.datePublication}}</p>
+        </div>
+        <h3 class="title-color">{{post.title}}</h3>
+        <p class="text-justify m-2">{{post.content}}</p>
+        <button class="btn btn-submit-color my-2" v-if="isAdmin = true" v-on:click="deletePost" >Delete</button>
+    </article>
+</div>
 </template>
 
 <script>
@@ -26,22 +26,25 @@ export default {
       this.isAdmin = isAdmin;
 
       //Obtenir tous les posts
-    try {
-        fetch("http://localhost:3000/api/post", {
+      fetch("http://localhost:3000/api/post",  {
              headers: {
                 'authorization': 'bearer ' + localStorage.getItem('token')
-            }
-         })
-           
-         .then(response => {
-             let post = response.json()
-             console.log(post)
-             this.posts = post
-         })
+            }})
+      .then (response => response.json())
+      .then(data=>this.posts = data)
       
-    } catch (e) {
-        console.log(e);
-    }
+    // try {
+    //     fetch("http://localhost:3000/api/post", {
+    //          headers: {
+    //             'authorization': 'bearer ' + localStorage.getItem('token')
+    //         }
+    //      })   
+    //      .then(response => {this.posts = response.posts})
+         
+      
+    // } catch (e) {
+    //     console.log(e);
+    // }
   },
   methods : {
       deletePost() {

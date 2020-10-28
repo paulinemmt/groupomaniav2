@@ -1,11 +1,11 @@
-//////////////////////////ROUTES SAUCE////////////////////////////////
+//////////////////////////ROUTES POST////////////////////////////////
 
 const express = require('express');
-const postRouter = express.Router(); //appel méthode router de express
+const postRouter = express.Router(); //Router method
 
-const auth = require('../middleware/auth'); //importation authentification
+const auth = require('../middleware/auth'); //authentification
 
-const postCtrl = require('../controllers/post'); //importation des controllers article
+const postCtrl = require('../controllers/post'); //Post controllers
 
 //routes
 postRouter.get('/',auth, postCtrl.getAllPost);

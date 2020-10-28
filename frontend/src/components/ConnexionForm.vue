@@ -1,6 +1,6 @@
 <template>
 <div class="container w-50 my-5">
-    <form >
+    <form>
     <div class="form-group">
         <label for="email">Email address</label>
         <input type="email" class="form-control" id="email" v-model="email" required>
@@ -21,51 +21,47 @@ export default {
         return{
             email: '',
             password: ''
+            }
+        },
+    methods: {
+        loginUser() {
+            let dataForm = JSON.stringify({email : this.email, password : this.password});
+            async function postForm(dataToSend) {
+                try {
+                    let response = await fetch("http://localhost:3000/api/user/login", {
+                        method: 'POST',
+                        headers: {
+                            'content-type': 'application/json'
+                        },
+                        body: dataToSend,
+                    });
+                        if (response.ok) {
+                            let responseId = await response.json();
+                            localStorage.setItem("Id", responseId.userId);
+                            localStorage.setItem("token", responseId.token);
+                            localStorage.setItem("isAdmin", responseId.isAdmin);
+                            window.location.href = "http://localhost:8080/signup#/allpost";
+                        } else {
+                            console.error('Retour du serveur : ', response.status);
+                        }
+                } catch (e) {
+                    console.log(e);
+                }
+            }
+            postForm(dataForm);
         }
-    },
-methods: {
-loginUser() {
-    console.log('coucou')
-    let dataForm = JSON.stringify({email : this.email, password : this.password})
-    console.log(dataForm)
-    async function postForm(dataToSend) {
-    try {
-        let response = await fetch("http://localhost:3000/api/user/login", {
-            method: 'POST',
-            headers: {
-                // 'Authorization': "Bearer " + token,
-                'content-type': 'application/json'
-            },
-            body: dataToSend,
-        });
-        if (response.ok) {
-            let responseId = await response.json();
-            console.log(responseId);
-            localStorage.setItem("Id", responseId.userId);
-            localStorage.setItem("token", responseId.token);
-            localStorage.setItem("isAdmin", responseId.isAdmin);
-            window.location.href = "http://localhost:8080/signup#/allpost";
-        } else {
-            console.error('Retour du serveur : ', response.status);
-        }
-    } catch (e) {
-        console.log(e);
     }
-}
-postForm(dataForm);
-}
-}
 }
 </script>
 
 <style scoped lang="scss">
 .btn-submit-color{
-background-color: #FD2D01;
-color:#fff;
-&:hover{
-    font-weight:bold;
-    background-color: #FFD7D7;
-    color: #FD2D01;
-}
+    background-color: #FD2D01;
+    color:#000;
+        &:hover{
+            font-weight:bold;
+            background-color: #FFD7D7;
+            color: #000;
+        }
 }
 </style>

@@ -1,15 +1,15 @@
-//////////////////////////CONTROLLER USER///////////////////////////
+//////////////////////////CONTROLLERS USER///////////////////////////
 
-const bcrypt = require('bcrypt'); //hashage du mot de passe
-const jwtUtils = require('../utils/jwt.utils'); //création des token d'identification pour la session
-const jwt = require('jsonwebtoken');
-const models = require('../models'); //importation du model User
+////////////IMPORTS
+const bcrypt = require('bcrypt'); //hash password
+const jwt = require('jsonwebtoken'); // token creation
+const models = require('../models'); //User model import
 
+////////////REQUESTS
 
 //INSCRIPTION USER
 exports.signUpUser = (req, res, next) => {
-    console.log('coucou')
-    console.log(req.body)
+
     const email = req.body.email;
     const username = req.body.username;
     const password = req.body.password;
@@ -53,26 +53,27 @@ exports.signUpUser = (req, res, next) => {
         })
 }
 
+//LOGIN USER
 exports.loginUser = (req, res, next) => {
     console.log(req.body.password)
-    //chercher l'adresse mail dans la base de donnée
+    //Look for mail address in the data base
     const email = req.body.email
     models.User.findOne({
         where: { email: email }
     })
         .then(user => {
-            //si l'utilisateur n'est pas dans la base de donnée
+            //If user is not in the data base
             if (!user) {
                 return res.status(401).json({ error: 'User not exist in DB !' });
             }
-            //si l'utilisateur est trouvé alors vérification du mot de passe crypté
+            //If the user is in the data base
             bcrypt.compare(req.body.password, user.password)
                 .then(valid => {
-                    //si le mot de passe ne correspond pas
+                    //If the password isn't correct
                     if (!valid) {
                         return res.status(401).json({ error: 'Invalid password !' });
                     }
-                    //si le mot de passe correspond alors création d'un token d'identification
+                    //If the password is correct, then creation of a token
                     res.status(200).json({
                         userId: user.id,
                         isAdmin: user.isAdmin,
@@ -85,10 +86,10 @@ exports.loginUser = (req, res, next) => {
                         )
                     });
                 })
-                // erreur serveur
+                // Server error
                 .catch(error => res.status(500).json({ error }));
         })
-        // erreur serveur
+        // Server erroe
         .catch(error => res.status(500).json({ error }));
 };
 
@@ -105,11 +106,8 @@ exports.deleteUser = (req, res, next) => {
 
 //UPDATE USER
 exports.updateUser = (req, res, next) => {
-    console.log('coucou update')
-    //vérifie si req.file existe
     const id = req.body.id;
     const username = req.body.username;
-    //   const photo = req.body.photo
     models.User.update(
         { username: username },
         { where: { id: id } }
