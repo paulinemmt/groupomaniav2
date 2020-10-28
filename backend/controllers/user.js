@@ -74,9 +74,10 @@ exports.loginUser = (req, res, next) => {
                     }
                     //si le mot de passe correspond alors création d'un token d'identification
                     res.status(200).json({
-                        userId: user._id,
+                        userId: user.id,
+                        isAdmin: user.isAdmin,
                         token: jwt.sign(
-                            { userId: user._id },
+                            { userId: user.id },
                             //création d'un token
                             'RANDOM_TOKEN_SECRET',
                             //valable 24h

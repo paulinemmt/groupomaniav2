@@ -13,11 +13,11 @@
         <label for="password">Password</label>
         <input type="password" class="form-control" id="password" v-model="password" required>
     </div>
-    <div class="form-group">
+    <!-- <div class="form-group">
         <label for="photo">Photo</label>
         <input type="text" class="form-control" id="photo" v-model="photo">
-    </div>
-    <button type="submit" class="btn btn-submit-color" v-on:click="signUpUser">Inscription</button>
+    </div> -->
+    <button type="submit" class="btn btn-submit-color" v-on:click="signUpUser">Signup</button>
     </form>
 </div>
 </template>
@@ -49,8 +49,6 @@ export default {
         if (response.ok) {
             let responseId = await response.json();
             console.log(responseId);
-            localStorage.setItem("Id", responseId.userId);
-            // window.location.href = "/create";
         
         } else {
             console.error('Retour du serveur : ', response.status);
@@ -60,6 +58,7 @@ export default {
     }
 }
 signUp(dataForm)
+ window.location.href = "http://localhost:8080/signup#/login";
          }
     }
 }

@@ -10,36 +10,24 @@ Ce projet est réalisé dans le cadre d'une formation de dévellopeur web.
 Mon agence web se lance dans un projet avec l'entreprise Groupomania afin de développer une application
 de partage et de création d'article pour les employés.
 
-Installation du frontend 
+Installation du backend 
 -----------------------
 1. Cloner le repository
 2. Initialisation du projet : `npm init`
-3. Installer le framework VueJS CLI
-4. Lancer le serveur : `npm run serve`
+3. Lancer le serveur : `node server`
+4. Package à installer avec `npm install` :
+    * express
+    * body-parser
+    * fs
+    * bcrypt
+    * jsonwebtoken
+    * path
+    * helmet
+    * http
+    * sequelize
 
-
-
-# frontend
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Base de donnée
+--------------
+A télécharger séparément
+Serveur local : Laragon
+Base de donnée : MySql
