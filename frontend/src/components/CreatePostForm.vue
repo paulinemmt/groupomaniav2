@@ -27,7 +27,7 @@ export default {
     methods:{
         createPost() {
             let idUser = parseInt(localStorage.getItem("Id"));
-            let dataForm = {id_users: idUser, title: this.title, content: this.content};
+            let dataForm = {id_users: idUser, title: this.title, content: this.content, userId: 0};
             let jsonDataForm = JSON.stringify(dataForm)
             async function postForm(dataToSend) {
                 try {

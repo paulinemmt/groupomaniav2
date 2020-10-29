@@ -5,13 +5,13 @@
     <div id="nav" class="bg-nav py-2">
       <!-- User not connected -->
       <div class="" v-if =" id === null " >
-        <router-link to="/signup">Signup</router-link> |
-        <router-link to="/login">Login</router-link>  
+        <router-link to="/signup">Inscription</router-link> |
+        <router-link to="/login">Connexion</router-link>  
       </div>
       <!-- User connected-->
       <div class="" v-else>  
-        <router-link to="/allpost">View All</router-link> |
-        <router-link to="/create">Create a Post</router-link> |
+        <router-link to="/allpost">Voir tous les posts</router-link> |
+        <router-link to="/create">Créer un post</router-link> |
         <router-link to="/profil">Profil</router-link> |
         <a href="#" v-on:click="exitUser">Exit</a> 
       </div>

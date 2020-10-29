@@ -22,7 +22,7 @@ const routes = [
   },
   {
     path: '/allpost',
-    name: 'allPost',
+    name: 'AllPost',
     component: UserPostView
   },
   {

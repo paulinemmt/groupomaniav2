@@ -18,7 +18,6 @@ module.exports = (sequelize, DataTypes) => {
       })
     }
   };
-
   Post.init({
     id_users: DataTypes.INTEGER,
     title: DataTypes.STRING,
@@ -27,6 +26,5 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Post',
   });
-  
   return Post;
 };

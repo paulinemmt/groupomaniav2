@@ -20,10 +20,6 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
-      photo: {
-        allowNull: true,
-        type: Sequelize.STRING
-      },
       isAdmin: {
         allowNull: false,
         type: Sequelize.BOOLEAN
@@ -33,7 +29,7 @@ module.exports = {
         type: Sequelize.DATE
       },
       updatedAt: {
-        allowNull: true,
+        allowNull: false,
         type: Sequelize.DATE
       }
     });
