@@ -2,7 +2,7 @@
 <div id="app">
 
   <header>
-    <div id="nav">
+    <div id="nav" class="bg-nav py-2">
       <!-- User not connected -->
       <div class="" v-if =" id === null " >
         <router-link to="/signup">Signup</router-link> |
@@ -19,7 +19,7 @@
     <Header/>
   </header>
 
-  <body>
+  <body class="bg-body">
     <router-view/>
   </body>
 
@@ -71,19 +71,23 @@ export default {
 }
 
 #nav{
-  padding: 30px;
-
+  background-color: #f0e8c7;
   a {
+    font-family:Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
     font-size: 1.2rem;
-    color:#909090 ;
+    color:#303030 ;
       &:hover{
         color:#000;
       }
 
     &.router-link-exact-active {
-      color: #FD2D01;
+      color: #024601;
     }
   }
+  }
+.bg-body{
+  background-color: #f0e8c7;
 }
+
 </style>

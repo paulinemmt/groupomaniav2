@@ -1,19 +1,19 @@
 <template>
-<div class="container w-50 my-5">
-    <form>
+<div class="container w-50">
+    <form class="py-4">
         <div class="form-group">
-            <label for="email">Email address</label>
+            <label for="email">Adresse mail</label>
             <input type="email" class="form-control" id="email" v-model="email" required>
         </div>
         <div class="form-group">
-            <label for="username">Username</label>
+            <label for="username">Pseudo</label>
             <input type="text" class="form-control" id="username" v-model="username" required>
         </div>
         <div class="form-group">
-            <label for="password">Password</label>
+            <label for="password">Mot de passe</label>
             <input type="password" class="form-control" id="password" v-model="password" required>
         </div>
-        <button type="submit" class="btn btn-submit-color" v-on:click="signUpUser">Signup</button>
+        <button type="submit" class="btn btn-submit-color" v-on:click="signUpUser">Inscription</button>
     </form>
 </div>
 </template>
@@ -60,12 +60,13 @@ export default {
 
 <style scoped lang="scss">
 .btn-submit-color{
-    background-color: #FD2D01;
-    color:#000;
+    background-color: #024601;
+    color:#f0e8c7;
+    font-weight: bold;
         &:hover{
             font-weight:bold;
-            background-color: #FFD7D7;
-            color: #000;
+            background-color: #f0e8c7;
+            color: #024601;
         }
 }
 </style>

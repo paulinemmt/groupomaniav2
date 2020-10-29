@@ -1,15 +1,15 @@
 <template>
-<div class="container w-50 my-5">
-    <form>
+<div class="container w-50">
+    <form class="py-4">
     <div class="form-group">
-        <label for="email">Email address</label>
+        <label for="email">Adresse mail</label>
         <input type="email" class="form-control" id="email" v-model="email" required>
     </div>
     <div class="form-group">
-        <label for="password">Password</label>
+        <label for="password">Mot de passe</label>
         <input type="password" class="form-control" id="password" v-model="password" required>
     </div>
-    <button type="submit" class="btn btn-submit-color" v-on:click="loginUser">Login</button>
+    <button type="submit" class="btn btn-submit-color" v-on:click="loginUser">Connexion</button>
     </form>
 </div>
 </template>
@@ -42,7 +42,7 @@ export default {
                             localStorage.setItem("isAdmin", responseId.isAdmin);
                             console.log(location.origin);
                             location.replace(location.origin + "/signup#/allpost");
-                            // window.location.href = "http://localhost:8080/signup#/allpost";
+                           
                         } else {
                             console.error('Retour du serveur : ', response.status);
                         }
@@ -58,12 +58,13 @@ export default {
 
 <style scoped lang="scss">
 .btn-submit-color{
-    background-color: #FD2D01;
-    color:#000;
+    background-color: #024601;
+    color:#f0e8c7;
+    font-weight: bold;
         &:hover{
             font-weight:bold;
-            background-color: #FFD7D7;
-            color: #000;
+            background-color: #f0e8c7;
+            color: #024601;
         }
 }
 </style>

@@ -1,13 +1,13 @@
 <template>
-<div class="container w-50 my-5">
-    <form>
+<div class="container w-50">
+    <form class="py-4">
         <div class="form-group">
-            <label for="username">Username</label>
+            <label for="username">Nouveau pseudo</label>
             <input type="text" class="form-control" id="username" v-model="username">
         </div>
-        <button type="submit" class="btn btn-submit-color" v-on:click="updateUser">Modify</button>
+        <button type="submit" class="btn btn-submit-color " v-on:click="updateUser">Modifier le profil</button>
     </form>
-    <button class="btn btn-submit-color my-2" v-on:click="deleteUser">Delete</button>
+    <button class="btn btn-submit-color mb-4" v-on:click="deleteUser">Supprimer le profil</button>
 </div>
 </template>
 
@@ -81,12 +81,13 @@ postForm(dataForm);
 
 <style scoped lang="scss">
 .btn-submit-color{
-    background-color: #FD2D01;
-    color:#000;
+    background-color: #024601;
+    color:#f0e8c7;
+    font-weight: bold;
         &:hover{
             font-weight:bold;
-            background-color: #FFD7D7;
-            color: #000;
-    }
+            background-color: #f0e8c7;
+            color: #024601;
+        }
 }
 </style>

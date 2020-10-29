@@ -1,12 +1,12 @@
 
 <template>
-<div class="container py-3 footer-bg">
-  <div class="row d-flex justify-content-center">
-      <a class="mx-2" href='#'>Legal notice</a>
+<div class="py-3 footer-bg">
+  <div class="row d-flex justify-content-center w-100">
+      <a class="mx-2" href='#'>Mentions légales</a>
       <a class="mx-2" href='mailto:groupomania@contact.com'>Contact</a>
   </div>
   <div class="row d-flex justify-content-center mt-2 text-company">
-      <p>A CONNECT-E website</p>
+      <p>CONNECT-E</p>
   </div>
 </div>
 </template>
@@ -20,16 +20,17 @@ export default {
 
 <style scoped lang="scss">
 a{
-  color:#202020;
+  color:#fff;
     &:hover{
       text-decoration: none;
       font-weight: bold;
     }
 }
 .footer-bg{
-  background-color: #FFD7D7;
+  background-image: url("../assets/fern.jpg");
 }
 .text-company{
   font-size: 0.8rem;
+  color:#fff;
 }
 </style>

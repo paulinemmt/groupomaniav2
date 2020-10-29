@@ -1,15 +1,15 @@
 <template>
-<div class="container w-50 my-5">
-    <form>
+<div class="container w-50">
+    <form class="py-4">
         <div class="form-group">
-            <label for="title">Title</label>
+            <label for="title">Titre</label>
             <input type="text" class="form-control" id="title" v-model="title" max-length=50 required>
         </div>
         <div class="form-group">
-            <label for="content">Content</label>
+            <label for="content">Contenu</label>
             <textarea class="form-control" id="content" v-model="content" rows=5 cols=33 required placeholder="Ecrire un article ou partagez un lien vers un article de votre choix..."></textarea>
         </div>
-        <button type="submit" class="btn btn-submit-color" v-on:click="createPost">Post</button>
+        <button type="submit" class="btn btn-submit-color" v-on:click="createPost">Partager</button>
     </form>
 </div>
 </template>
@@ -58,12 +58,13 @@ export default {
 
 <style scoped lang="scss">
 .btn-submit-color{
-    background-color: #FD2D01;
-    color:#000;
+    background-color: #024601;
+    color:#f0e8c7;
+    font-weight: bold;
         &:hover{
             font-weight:bold;
-            background-color: #FFD7D7;
-            color: #000;
-        }   
+            background-color: #f0e8c7;
+            color: #024601;
+        }
 }
 </style>

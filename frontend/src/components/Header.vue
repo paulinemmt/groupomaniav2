@@ -1,8 +1,11 @@
 <template>
-<div class="container">
-    <div class="row d-flex flex-column justify-content-center bg-header">
-        <h1 class="main-title text-uppercase">Post sharing business forum </h1>
-        <a href='#'><img class="logo-title" src='../assets/icon-above-font.png' alt="Icone de Groupomania"></a>
+<div class=" bg-header ">
+    <div class="row d-flex flex-column justify-content-center  pt-4 w-100">
+        <h1 class="main-title py-5"><span class='font-weight-bold text-uppercase title-size'>Groupoforum</span><br/>
+            Ecrire, lire et partager </h1>
+        <div>
+            <img class="logo-title" src='../assets/white_logo.png' alt="Icone de Groupomania">
+        </div>
     </div>
 </div>
 </template>
@@ -18,16 +21,19 @@ export default {
 <style scoped lang="scss">
 .main-title{
     font-size: 2rem;
-    color: #FD2D01;
-     text-shadow: 2px 2px 2px #303030;
+    color: #fff;
+    font-family: Georgia, 'Times New Roman', Times, serif ;
 }
 .logo-title{
-    width: 20rem;
+    width: 15rem;
 }
-.logo-navbar{
-    width: 2rem;
-}
-// .bg-header{
-//     background-image: url("../../../assets/images/bg-header.jpg");
-// }
+ .bg-header{
+    background-image: url("../assets/fern.jpg");
+ }
+ .bg-header-color{
+     background-color: #f0e8c7;
+ }
+ .title-size{
+     font-size: 3rem;
+ }
 </style>

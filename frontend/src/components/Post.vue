@@ -1,12 +1,14 @@
 <template>
 <div class="container">
-    <article class="border rounded my-2 p-2" v-for="(post, id) in posts" v-bind:key="id">
+    <article class=" p-2 article" v-for="(post, id) in posts" v-bind:key="id">
+        <p class="text-center line">________________________</p>
         <div class="d-flex flex-row justify-content-end">
-            <p class="p-2" id="post" >{{post.updatedAt}}</p>
+            <p class="p-2" id="post" >Date de publication : {{post.updatedAt}}</p>
         </div>
         <h3 class="title-color">{{post.title}}</h3>
         <p class="text-justify m-2">{{post.content}}</p>
-        <button class="btn btn-submit-color my-2" :disabled="isAdmin == true" v-on:click="deletePost" >Delete</button>
+        <button class="btn btn-submit-color my-2" :disabled="isAdmin == true" v-on:click="deletePost" >Supprimer l'article</button>
+        
     </article>
 </div>
 </template>
@@ -66,15 +68,22 @@ postForm(idPost);
 
 <style scoped lang="scss">
 .title-color {
-    color:#FD2D01;
+    color:#024601;
+}
+.article{
+    border-color: #024601;
 }
 .btn-submit-color{
-    background-color: #FD2D01;
-    color:#000;
+    background-color: #024601;
+    color:#f0e8c7;
+    font-weight: bold;
         &:hover{
             font-weight:bold;
-            background-color: #FFD7D7;
-            color: #000;
+            background-color: #f0e8c7;
+            color: #024601;
         }
+.line{
+    color:#024601;
+}
 }
 </style>
