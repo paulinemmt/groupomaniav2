@@ -12,6 +12,20 @@ const path = require('path');
 const postRoutes = require('./routes/post');
 const userRoutes = require('./routes/user');
 
+// //Data base connexion A SUPPRIMER
+// const sequelize = new Sequelize('groupomania_social_media', 'root', '', {
+//     dialect: 'mysql',
+//     host: 'localhost'
+//  })  
+//     try {
+//     sequelize.authenticate();
+//     console.log('Connection with the data base has been established successfully.');
+//   } catch (error) {
+//     console.error('Unable to connect to the database:', error);
+//   }
+
+//   const exportss = module.exports = {};
+//   exports.sequelize = sequelize;
 
 //CORS error
 app.use((req, res, next) => {
