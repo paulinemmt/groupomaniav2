@@ -1,5 +1,5 @@
 <template>
-<div class="container w-50">
+<div class="w-50">
     <form class="py-4">
     <div class="form-group">
         <label for="email">Adresse mail</label>

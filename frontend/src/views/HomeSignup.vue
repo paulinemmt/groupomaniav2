@@ -1,5 +1,5 @@
 <template>
-<div class="container">
+<div class="d-flex flex-column align-items-center">
     <h2 class="text-center subtitle pt-5 pb-4">Inscription</h2>
     <p class="text-center font-italic">Inscription rapide et simple au forum !</p>
     <InscriptionForm/>

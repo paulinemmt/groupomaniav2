@@ -1,12 +1,12 @@
 <template>
-<div class=" bg-header ">
-    <div class="row d-flex flex-column justify-content-center  pt-4 w-100">
+<div class="bg-header">
+    <div class=" d-flex flex-column justify-content-around pt-4">
         <h1 class="main-title py-5"><span class='font-weight-bold text-uppercase title-size'>Groupoforum</span><br/>
             Ecrire, lire et partager </h1>
         <div>
             <img class="logo-title" src='../assets/white_logo.png' alt="Icone de Groupomania">
         </div>
-    </div>
+   </div>
 </div>
 </template>
 
@@ -20,12 +20,12 @@ export default {
 
 <style scoped lang="scss">
 .main-title{
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #fff;
     font-family: Georgia, 'Times New Roman', Times, serif ;
 }
 .logo-title{
-    width: 15rem;
+    width: 12rem;
 }
  .bg-header{
     background-image: url("../assets/fern.jpg");
@@ -34,6 +34,6 @@ export default {
      background-color: #f0e8c7;
  }
  .title-size{
-     font-size: 3rem;
+     font-size: 2.1rem;
  }
 </style>

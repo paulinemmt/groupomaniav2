@@ -1,12 +1,12 @@
 
 <template>
-<div class="py-3 footer-bg">
-  <div class="row d-flex justify-content-center w-100">
+<div class="py-3 footer-bg d-flex flex-column align-items-center">
+  <div class="row d-flex justify-content-around w-100">
       <a class="mx-2" href='#'>Mentions légales</a>
       <a class="mx-2" href='mailto:groupomania@contact.com'>Contact</a>
   </div>
-  <div class="row d-flex justify-content-center mt-2 text-company">
-      <p>CONNECT-E</p>
+  <div class="row d-flex justify-content-around mt-2 text-company w-100">
+      <p>Site internet créé par CONNECT-E</p>
   </div>
 </div>
 </template>
@@ -22,7 +22,7 @@ export default {
 a{
   color:#fff;
     &:hover{
-      text-decoration: none;
+      text-decoration: underline;
       font-weight: bold;
     }
 }
@@ -30,7 +30,7 @@ a{
   background-image: url("../assets/fern.jpg");
 }
 .text-company{
-  font-size: 0.8rem;
+  font-size: 0.5rem;
   color:#fff;
 }
 </style>

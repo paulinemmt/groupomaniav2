@@ -1,5 +1,5 @@
 <template>
-<div class="container">
+<div>
         <div v-if="isAdmin === 'true'" class="mt-5 pb-4">
             <h3 class="manager-title font-italic">Le coin du modérateur...</h3>
             <input placeholder="Numéro du post" v-model="idPost">
