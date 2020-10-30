@@ -22,6 +22,7 @@ exports.addPost = (req, res, next) => {
   const id_users = req.body.id_users
   const title = req.body.title;
   const content = req.body.content;
+  const userId = req.body.userId;
 
 
   //Verify parameters
@@ -34,6 +35,7 @@ exports.addPost = (req, res, next) => {
     id_users: id_users,
     title: title,
     content: content,
+    UserId: userId
   })
     .then(function (newPost) {
       return res.status(201).json({
@@ -48,6 +50,7 @@ exports.addPost = (req, res, next) => {
 //DELETE POST FOR MANAGER
 exports.deletePost = (req, res, next) => {
   let id = req.body.id
+  console.log(req.body)
   models.Post.destroy({ where: { id: id } })
     .then(() => res.status(200).json({ message: 'Post deleted !' }))
     .catch(error => res.status(500).json({ error }));

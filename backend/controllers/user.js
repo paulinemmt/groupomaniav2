@@ -77,6 +77,7 @@ exports.loginUser = (req, res, next) => {
                     res.status(200).json({
                         userId: user.id,
                         isAdmin: user.isAdmin,
+                        email: user.email,
                         token: jwt.sign(
                             { userId: user.id },
                             //création d'un token

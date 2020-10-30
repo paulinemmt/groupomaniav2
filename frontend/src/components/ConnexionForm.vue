@@ -40,9 +40,8 @@ export default {
                             localStorage.setItem("Id", responseId.userId);
                             localStorage.setItem("token", responseId.token);
                             localStorage.setItem("isAdmin", responseId.isAdmin);
-                            console.log(location.origin);
+                            localStorage.setItem("email", responseId.email);
                             location.replace(location.origin + "/signup#/allpost");
-                           
                         } else {
                             console.error('Retour du serveur : ', response.status);
                         }

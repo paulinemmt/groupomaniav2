@@ -1,11 +1,11 @@
 <template>
 <div>
-        <div v-if="isAdmin === 'true'" class="mt-5 pb-4">
+        <div v-if="isAdmin === 'true'" class="mt-5 pb-4 pl-5">
             <h3 class="manager-title font-italic">Le coin du modérateur...</h3>
             <input placeholder="Numéro du post" v-model="idPost">
         <button class="btn btn-submit-color my-2 ml-2" v-on:click="deletePost" >Supprimer l'article</button>
     </div>
-    <article class=" p-2 article" v-for="(post, id) in posts" v-bind:key="id">
+    <article class="p-3 px-5 article" v-for="(post, id) in posts" v-bind:key="id">
         <p class="text-center line">________________________</p>
         <div class="d-flex flex-row justify-content-between">
             <p class="p-2" v-if="isAdmin === 'true'">N° {{post.id}}</p>
@@ -43,7 +43,6 @@ export default {
   methods : {
       deletePost() {
         let idPost = JSON.stringify({id: this.idPost});
-        console.log('coucou' + this.id);
             async function postForm(dataForm) {
     try {
         let response = await fetch("http://localhost:3000/api/post", {
@@ -57,6 +56,7 @@ export default {
         if (response.ok) {
             let responseId = await response.json();
             console.log(responseId)
+            location.reload();
         } else {
             console.error('Retour du serveur : ', response.status);
         }

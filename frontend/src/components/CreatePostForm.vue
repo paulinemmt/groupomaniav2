@@ -29,6 +29,7 @@ export default {
             let idUser = parseInt(localStorage.getItem("Id"));
             let dataForm = {id_users: idUser, title: this.title, content: this.content, userId: 0};
             let jsonDataForm = JSON.stringify(dataForm)
+            console.log(dataForm)
             async function postForm(dataToSend) {
                 try {
                     let response = await fetch("http://localhost:3000/api/post", {
@@ -41,7 +42,7 @@ export default {
                     });
                         if (response.ok) {
                             let responseId = await response.json();
-                            // window.location.href = " http://localhost:8080/signup#/allpost";
+                            window.location.href = " http://localhost:8080/signup#/allpost";
                             console.log(responseId);
                         } else {
                             console.error('Retour du serveur : ', response.status);

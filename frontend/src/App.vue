@@ -55,7 +55,9 @@ export default {
        localStorage.removeItem('Id');
        localStorage.removeItem('token');
        localStorage.removeItem('isAdmin');
+       localStorage.removeItem('email');
        location.replace(location.origin + "/signup#/signup");
+       location.reload();
     }
   }
 }
